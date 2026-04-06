@@ -1,0 +1,963 @@
+{
+  "info": {
+    "_postman_id": "1baf3f9e-6c92-4c92-a554-2f6f6528b0c1",
+    "name": "Projeto API - Completa",
+    "description": "Colecao Postman com todos os endpoints mapeados nos controllers atuais do projeto.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Usuarios",
+      "item": [
+        {
+          "name": "Criar usuario",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"Freddie Mercury\",\n  \"email\": \"freddie@queen.com\",\n  \"dataInscricao\": \"{{dataInscricao}}\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/usuarios",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "usuarios"
+              ]
+            },
+            "description": "POST /usuarios"
+          }
+        },
+        {
+          "name": "Buscar usuario por id",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/usuarios/{{usuarioId}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "usuarios",
+                "{{usuarioId}}"
+              ]
+            },
+            "description": "GET /usuarios/{id}"
+          }
+        },
+        {
+          "name": "Listar usuarios",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/usuarios",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "usuarios"
+              ]
+            },
+            "description": "GET /usuarios"
+          }
+        },
+        {
+          "name": "Atualizar usuario",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"Freddie Mercury (Updated)\",\n  \"email\": \"freddie.updated@queen.com\",\n  \"dataInscricao\": \"{{dataInscricao}}\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/usuarios/{{usuarioId}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "usuarios",
+                "{{usuarioId}}"
+              ]
+            },
+            "description": "PUT /usuarios/{id}"
+          }
+        },
+        {
+          "name": "Remover usuario",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/usuarios/{{usuarioId}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "usuarios",
+                "{{usuarioId}}"
+              ]
+            },
+            "description": "DELETE /usuarios/{id}"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Artistas",
+      "item": [
+        {
+          "name": "Criar artista",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"Queen\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/artistas",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "artistas"
+              ]
+            },
+            "description": "POST /artistas"
+          }
+        },
+        {
+          "name": "Buscar artista por id",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/artistas/{{artistaId}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "artistas",
+                "{{artistaId}}"
+              ]
+            },
+            "description": "GET /artistas/{id}"
+          }
+        },
+        {
+          "name": "Listar artistas",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/artistas",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "artistas"
+              ]
+            },
+            "description": "GET /artistas"
+          }
+        },
+        {
+          "name": "Atualizar artista",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"Queen (Updated)\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/artistas/{{artistaId}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "artistas",
+                "{{artistaId}}"
+              ]
+            },
+            "description": "PUT /artistas/{id}"
+          }
+        },
+        {
+          "name": "Remover artista",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/artistas/{{artistaId}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "artistas",
+                "{{artistaId}}"
+              ]
+            },
+            "description": "DELETE /artistas/{id}"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Estilos",
+      "item": [
+        {
+          "name": "Criar estilo",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"Rock\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/estilos",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "estilos"
+              ]
+            },
+            "description": "POST /estilos"
+          }
+        },
+        {
+          "name": "Buscar estilo por id",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/estilos/{{estiloId}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "estilos",
+                "{{estiloId}}"
+              ]
+            },
+            "description": "GET /estilos/{id}"
+          }
+        },
+        {
+          "name": "Listar estilos",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/estilos",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "estilos"
+              ]
+            },
+            "description": "GET /estilos"
+          }
+        },
+        {
+          "name": "Atualizar estilo",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"Rock Classico\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/estilos/{{estiloId}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "estilos",
+                "{{estiloId}}"
+              ]
+            },
+            "description": "PUT /estilos/{id}"
+          }
+        },
+        {
+          "name": "Remover estilo",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/estilos/{{estiloId}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "estilos",
+                "{{estiloId}}"
+              ]
+            },
+            "description": "DELETE /estilos/{id}"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Produtoras",
+      "item": [
+        {
+          "name": "Criar produtora",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"EMI\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/produtoras",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "produtoras"
+              ]
+            },
+            "description": "POST /produtoras"
+          }
+        },
+        {
+          "name": "Buscar produtora por id",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/produtoras/{{produtoraId}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "produtoras",
+                "{{produtoraId}}"
+              ]
+            },
+            "description": "GET /produtoras/{id}"
+          }
+        },
+        {
+          "name": "Listar produtoras",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/produtoras",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "produtoras"
+              ]
+            },
+            "description": "GET /produtoras"
+          }
+        },
+        {
+          "name": "Atualizar produtora",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"EMI Records\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/produtoras/{{produtoraId}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "produtoras",
+                "{{produtoraId}}"
+              ]
+            },
+            "description": "PUT /produtoras/{id}"
+          }
+        },
+        {
+          "name": "Remover produtora",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/produtoras/{{produtoraId}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "produtoras",
+                "{{produtoraId}}"
+              ]
+            },
+            "description": "DELETE /produtoras/{id}"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Albuns",
+      "item": [
+        {
+          "name": "Criar album",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"A Night at the Opera\",\n  \"dataLancamento\": \"{{dataLancamento}}\",\n  \"produtoraId\": {{produtoraId}},\n  \"artistaId\": {{artistaId}}\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/albums",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "albums"
+              ]
+            },
+            "description": "POST /albums"
+          }
+        },
+        {
+          "name": "Buscar album por id",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/albums/{{albumId}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "albums",
+                "{{albumId}}"
+              ]
+            },
+            "description": "GET /albums/{id}"
+          }
+        },
+        {
+          "name": "Listar albuns",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/albums",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "albums"
+              ]
+            },
+            "description": "GET /albums"
+          }
+        },
+        {
+          "name": "Atualizar album",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"A Night at the Opera (Remastered)\",\n  \"dataLancamento\": \"{{dataLancamento}}\",\n  \"produtoraId\": {{produtoraId}},\n  \"artistaId\": {{artistaId}}\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/albums/{{albumId}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "albums",
+                "{{albumId}}"
+              ]
+            },
+            "description": "PUT /albums/{id}"
+          }
+        },
+        {
+          "name": "Remover album",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/albums/{{albumId}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "albums",
+                "{{albumId}}"
+              ]
+            },
+            "description": "DELETE /albums/{id}"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Musicas",
+      "item": [
+        {
+          "name": "Criar musica",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"Bohemian Rhapsody\",\n  \"dataLancamento\": \"{{dataLancamento}}\",\n  \"albumId\": {{albumId}},\n  \"artistaId\": {{artistaId}},\n  \"produtoraId\": {{produtoraId}},\n  \"estiloId\": {{estiloId}}\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/musicas",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "musicas"
+              ]
+            },
+            "description": "POST /musicas"
+          }
+        },
+        {
+          "name": "Buscar musica por id",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/musicas/{{musicaId}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "musicas",
+                "{{musicaId}}"
+              ]
+            },
+            "description": "GET /musicas/{id}"
+          }
+        },
+        {
+          "name": "Listar musicas",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/musicas",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "musicas"
+              ]
+            },
+            "description": "GET /musicas"
+          }
+        },
+        {
+          "name": "Atualizar musica",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"Bohemian Rhapsody (Live)\",\n  \"dataLancamento\": \"{{dataLancamento}}\",\n  \"albumId\": {{albumId}},\n  \"artistaId\": {{artistaId}},\n  \"produtoraId\": {{produtoraId}},\n  \"estiloId\": {{estiloId}}\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/musicas/{{musicaId}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "musicas",
+                "{{musicaId}}"
+              ]
+            },
+            "description": "PUT /musicas/{id}"
+          }
+        },
+        {
+          "name": "Remover musica",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/musicas/{{musicaId}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "musicas",
+                "{{musicaId}}"
+              ]
+            },
+            "description": "DELETE /musicas/{id}"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Favoritas",
+      "item": [
+        {
+          "name": "Criar favorita",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"usuarioId\": {{usuarioId}},\n  \"musicaId\": {{musicaId}},\n  \"dataFavoritada\": \"{{dataFavoritada}}\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/favoritas",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "favoritas"
+              ]
+            },
+            "description": "POST /favoritas"
+          }
+        },
+        {
+          "name": "Buscar favorita por id",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/favoritas/{{favoritaId}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "favoritas",
+                "{{favoritaId}}"
+              ]
+            },
+            "description": "GET /favoritas/{id}"
+          }
+        },
+        {
+          "name": "Listar favoritas",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/favoritas",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "favoritas"
+              ]
+            },
+            "description": "GET /favoritas"
+          }
+        },
+        {
+          "name": "Listar favoritas por usuario",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/favoritas/usuario/{{usuarioId}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "favoritas",
+                "usuario",
+                "{{usuarioId}}"
+              ]
+            },
+            "description": "GET /favoritas/usuario/{usuarioId}"
+          }
+        },
+        {
+          "name": "Atualizar favorita",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"usuarioId\": {{usuarioId}},\n  \"musicaId\": {{musicaId}},\n  \"dataFavoritada\": \"{{dataFavoritada}}\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/favoritas/{{favoritaId}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "favoritas",
+                "{{favoritaId}}"
+              ]
+            },
+            "description": "PUT /favoritas/{id}"
+          }
+        },
+        {
+          "name": "Remover favorita por id",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/favoritas/{{favoritaId}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "favoritas",
+                "{{favoritaId}}"
+              ]
+            },
+            "description": "DELETE /favoritas/{id}"
+          }
+        },
+        {
+          "name": "Remover favorita por usuario e musica",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/favoritas/usuario/{{usuarioId}}/musica/{{musicaId}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "favoritas",
+                "usuario",
+                "{{usuarioId}}",
+                "musica",
+                "{{musicaId}}"
+              ]
+            },
+            "description": "DELETE /favoritas/usuario/{usuarioId}/musica/{musicaId}"
+          }
+        },
+        {
+          "name": "Remover favoritas por usuario",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/favoritas/usuario/{{usuarioId}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "favoritas",
+                "usuario",
+                "{{usuarioId}}"
+              ]
+            },
+            "description": "DELETE /favoritas/usuario/{usuarioId}"
+          }
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:8080"
+    },
+    {
+      "key": "usuarioId",
+      "value": "1"
+    },
+    {
+      "key": "artistaId",
+      "value": "1"
+    },
+    {
+      "key": "estiloId",
+      "value": "1"
+    },
+    {
+      "key": "produtoraId",
+      "value": "1"
+    },
+    {
+      "key": "albumId",
+      "value": "1"
+    },
+    {
+      "key": "musicaId",
+      "value": "1"
+    },
+    {
+      "key": "favoritaId",
+      "value": "1"
+    },
+    {
+      "key": "dataInscricao",
+      "value": "2026-03-25"
+    },
+    {
+      "key": "dataLancamento",
+      "value": "1975-11-21"
+    },
+    {
+      "key": "dataFavoritada",
+      "value": "2026-03-25"
+    }
+  ]
+}
+
