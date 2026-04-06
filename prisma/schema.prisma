@@ -1,0 +1,71 @@
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Artista {
+  id      Int      @id @default(autoincrement())
+  nome    String
+  pais    String?
+  albums  Album[]
+  musicas Musica[]
+}
+
+model Estilo {
+  id      Int      @id @default(autoincrement())
+  nome    String   @unique
+  musicas Musica[]
+}
+
+model Produtora {
+  id     Int     @id @default(autoincrement())
+  nome   String
+  pais   String?
+  albums Album[]
+}
+
+model Album {
+  id           Int        @id @default(autoincrement())
+  titulo       String
+  ano          Int?
+  artista      Artista    @relation(fields: [artista_id], references: [id])
+  artista_id   Int
+  produtora    Produtora? @relation(fields: [produtora_id], references: [id])
+  produtora_id Int?
+  musicas      Musica[]
+}
+
+model Musica {
+  id         Int        @id @default(autoincrement())
+  titulo     String
+  duracao    Int?
+  artista    Artista    @relation(fields: [artista_id], references: [id])
+  artista_id Int
+  album      Album?     @relation(fields: [album_id], references: [id])
+  album_id   Int?
+  estilo     Estilo?    @relation(fields: [estilo_id], references: [id])
+  estilo_id  Int?
+  favoritas  Favorita[]
+}
+
+model Usuario {
+  id        Int        @id @default(autoincrement())
+  nome      String
+  email     String     @unique
+  senha     String
+  favoritas Favorita[]
+}
+
+model Favorita {
+  id         Int     @id @default(autoincrement())
+  usuario    Usuario @relation(fields: [usuario_id], references: [id])
+  usuario_id Int
+  musica     Musica  @relation(fields: [musica_id], references: [id])
+  musica_id  Int
+
+  @@unique([usuario_id, musica_id])
+}
