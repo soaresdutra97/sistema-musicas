@@ -1,4 +1,5 @@
 import express from 'express';
+import rateLimit from 'express-rate-limit';
 import { artistaRouter } from './routes/artistaRoutes';
 import { estiloRouter } from './routes/estiloRoutes';
 import { produtoraRouter } from './routes/produtoraRoutes';
@@ -10,6 +11,14 @@ import { errorHandler } from './middlewares/errorHandler';
 
 const app = express();
 
+const limiter = rateLimit({
+  windowMs: 15 * 60 * 1000,
+  max: 100,
+  standardHeaders: true,
+  legacyHeaders: false,
+});
+
+app.use(limiter);
 app.use(express.json());
 
 app.use('/artistas', artistaRouter);
