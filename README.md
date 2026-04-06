@@ -58,6 +58,64 @@ src/
     java/com/projeto/projeto/
 ```
 
+## Mapa visual da arquitetura
+
+### Visao geral (hexagonal)
+
+```mermaid
+flowchart LR
+    C[Cliente HTTP] --> IC[infrastructure/adapter/inbound/rest\nControllers]
+
+    subgraph APP[application]
+        PI[port/in\nUseCase interfaces]
+        US[usecase\nServices]
+        PO[port/out\nGateway interfaces]
+        M[DTOs + Mappers]
+        PI --> US
+        US --> M
+        US --> PO
+    end
+
+    subgraph DOM[domain]
+        E[Entidades de negocio\nAlbum, Musica, Artista...]
+    end
+
+    subgraph INF[infrastructure]
+        OG[outbound/persistence/*/gateway\n*JpaGateway]
+        OR[outbound/persistence/*/repository\nJpaRepository]
+        DB[(PostgreSQL)]
+        OG --> OR --> DB
+    end
+
+    IC --> PI
+    US --> E
+    PO --> OG
+    IC <-->|JSON Request/Response| C
+```
+
+### Exemplo real no contexto `musica`
+
+```mermaid
+flowchart LR
+    U[Usuario/API Client] --> MC[MusicaController]
+    MC --> PMI[CriarMusicaUseCase\nBuscarMusicaPorIdUseCase\nListarMusicasUseCase\nAtualizarMusicaUseCase\nRemoverMusicaUseCase]
+    PMI --> MS[*MusicaService]
+    MS --> MM[MusicaMapper + DTOs]
+    MS --> PMO[MusicaGateway]
+    PMO --> MJG[MusicaJpaGateway]
+    MJG --> MR[MusicaRepository]
+    MR --> PG[(PostgreSQL)]
+    MS --> DM[domain.musica.model.Musica]
+```
+
+Leitura rapida:
+
+- `port/in`: o que entra na aplicacao (contrato dos casos de uso).
+- `usecase/*Service`: implementa a regra de negocio do contrato.
+- `port/out`: o que a aplicacao precisa para sair (persistencia, APIs externas etc.).
+- `*JpaGateway`: adaptador que implementa `port/out` usando tecnologia concreta.
+- `Repository`: detalhe tecnico do Spring Data JPA.
+
 ## Pre-requisitos
 
 - JDK 17
